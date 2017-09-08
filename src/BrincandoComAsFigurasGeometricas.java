@@ -3,43 +3,29 @@ public class BrincandoComAsFigurasGeometricas {
 
 	public static void main(String[] args) {
 
-		FigurasGeometricas fig = new FigurasGeometricas(10, 5, 7, 25);
+		Retangulo retangulo = new Retangulo(10, 5);
+		Quadrado quadrado = new Quadrado(7);
+		Circulo circulo = new Circulo(25);
 		
-		int per = fig.p(FigurasGeometricas.R);
-		if (per == -234 || per == -2658) {
-			System.out.println("ERRO");
-		}
+		retangulo.perimetro();
+		circulo.perimetro();
+		quadrado.perimetro();
 		
-		per = fig.p(FigurasGeometricas.C);
-		if (per == -234 || per == -2658) {
-			System.out.println("ERRO");
-		}
-
-		per = fig.p(-2);
-		if (per == -234 || per == -2658) {
-			System.out.println("ERRO");
-		}
-
-		per = fig.p(0);
-		if (per == -234 || per == -2658) {
-			System.out.println("ERRO");
-		}
-
-		fig.a(0);
-		fig.a(-1);
-		fig.a(2);
-		fig.a(1);
-		fig.a(-2);
+		System.out.println();
 		
-		String inf = fig.toStringDaFigura(-1);
-		inf = fig.toStringDaFigura(1);
-		System.out.println(inf);
-		inf = fig.toStringDaFigura(0);
-		System.out.println(inf);
-		inf = fig.toStringDaFigura(4);
-		System.out.println(inf);
-		inf = fig.toStringDaFigura(2);
-		System.out.println(inf);
+		System.out.println("A área deste quadrado é: " + quadrado.area());
+		System.out.println("A área deste retangulo é: " + retangulo.area());
+		System.out.println("A área deste circulo é: " + circulo.area());
+		System.out.println("Todas as áreas são: " +  retangulo.area() + ", " + quadrado.area() + " e " 
+				+ circulo.area() + ", retângulo, quadrado e círculo, respectivamente.");
+		
+		System.out.println();
+		
+		System.out.println(retangulo);
+		System.out.println(circulo);
+		System.out.println(quadrado);
+		System.out.println("O retangulo criado tem altura: " + retangulo.getAltura() + " e largura de: " + retangulo.getLargura() +
+			". O quadrado criado tem lados de: " + quadrado.getLado() +
+			". O circulo criado tem raio de: " + circulo.getRaio());
 	}
-
 }
